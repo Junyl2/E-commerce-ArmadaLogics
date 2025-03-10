@@ -40,8 +40,7 @@ Remove items from the cart.
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/ecommerce-platform.git
-   cd ecommerce-platform
+   git clone https://github.com/Junyl2/E-ommerce-ArmadaLogics
    ```
 
 ## Branchin Instruction:
