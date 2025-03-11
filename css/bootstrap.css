@@ -1,0 +1,91 @@
+.container {
+  font-family: "Arbutus Slab", serif;
+  h2 {
+    font-weight: bold;
+  }
+}
+/* Special Menu Section */
+
+.why-text {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+
+  color: white;
+  width: 100%;
+  text-align: center;
+  transform: translateY(40px);
+
+  .detail-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    button {
+      background-color: var(--btn-clr);
+      width: 100%;
+      color: white;
+      &:hover {
+        background-color: rgb(10, 94, 35);
+      }
+
+      img {
+        height: 15%;
+        width: 15%;
+        margin-bottom: 4px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+.gallery-single {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-single:hover .why-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+.custom-img {
+  height: 300px;
+  width: 250px;
+  object-fit: cover;
+  position: relative;
+}
+
+.button-group {
+  border: 1px solid rgb(233, 232, 232);
+  button {
+    background: none;
+    width: 100px;
+    border: none;
+  }
+}
+/* end of Special menu section */
+
+/* inside View Cart img */
+.cart-img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.payment-img {
+  height: 20px;
+  margin: 10px;
+  object-fit: cover;
+  margin-top: -5px;
+  border-radius: 5px;
+}
+.viewcart-img {
+  height: auto;
+  width: 25px;
+  margin-top: -5px;
+}
+#cart-item-image {
+  height: 160px;
+}
