@@ -1,3 +1,43 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
+@import url('https://fonts.googleapis.com/css?family=Athiti:400,500,600');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h2, h3, p{
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    color: #1f1f1f;
+    margin: 0;
+}
+
+h2 {
+    font-size: 22px
+}
+
+h3 {
+    font-size: 20px
+}
+
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+    outline: none;
+    transition: all .3s ease-in-out;
+}
+
+a {
+    color: #1f1f1f;
+    text-decoration: none;
+    outline: none;
+}
+
 .container {
   font-family: "Arbutus Slab", serif;
   h2 {
@@ -88,4 +128,260 @@
 }
 #cart-item-image {
   height: 160px;
+}
+
+/*------------------------------------------------------------------
+    Gallery
+-------------------------------------------------------------------*/
+.gallery{
+  padding: 70px 0px;
+}
+
+#galleryTitle{
+  text-align: center;
+  margin: 3% 0;
+}
+#galleryImg{
+  display: inline;
+  margin: 1%;
+  text-align: center;
+}
+.galleryRow{
+  img{
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      margin: 0 10px 30px 10px ;
+      transition: 0.2s ease-in-out;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+      border-radius: 5px;
+  }
+
+  img:hover{
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+  }
+}
+
+/*------------------------------------------------------------------
+    Customer Reviews
+-------------------------------------------------------------------*/
+.customerReview{
+  h2, p{
+    text-align: center ;
+  }
+}
+
+.customerCarousel{
+  width: 60%;
+  margin: 6% auto;
+}
+
+.carousel-item {
+  text-align: center;
+  padding: 40px;
+}
+
+.review-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.carousel-caption {
+  position: static;
+  color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: block;
+	position: absolute;
+  top: 35%;
+  width: 50px;
+  height: 50px;
+  background-color: #d0a772;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: #010101; 
+}
+
+/*------------------------------------------------------------------
+    Contact info
+-------------------------------------------------------------------*/
+.contactInfo{
+	background: #d0a772;
+  width: 100%;
+	padding: 30px 0;
+
+  .row{
+    padding: 0 15%;
+    display: flex;
+    justify-content: center;
+  }
+
+  i{
+    display: block;
+    float: left;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #fff;
+    color: #d0a772;
+    font-size: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  h3 {
+    margin: 0px;
+    margin-top: 5px;
+	  color: #ffffff;
+	  font-size: 20px;
+	  padding: 0px;
+  }
+
+  p {
+    margin: 0px;
+    color: #ffffff;
+    font-size: 17px;
+  }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+/*------------------------------------------------------------------
+  Footer
+-------------------------------------------------------------------*/
+.topFooter{
+  display:flex;
+  justify-content: space-between;
+  background-image: url("/assets/images/gallery/footer-bg.jpg");
+  background-color: rgba(0, 0, 0, 0);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 0 13%;
+
+  p a:hover{
+      color: #d0a772;
+  }
+
+  h3{
+      color: #ffffff;
+      font-size: 20px;
+      border-bottom: 1px dashed rgba(207, 166, 113, 0.5);
+      margin-bottom: 10px;
+  }
+
+  p{
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      padding-bottom: 10px;
+  }
+
+  .topFooterContainer{
+      width: 250px;
+      margin: auto;
+      margin-top: 5%;
+      margin-bottom: 3%;
+      position: relative;
+      z-index: 1;
+      flex-wrap: wrap; 
+
+      ul{
+          list-style: none;
+          padding: 0;
+      }
+
+      li, a{
+        color: rgba(255, 255, 255, 0.8);
+        
+      }
+
+      form {
+          display: block;
+          text-align: center;
+          padding: 5px 0;
+      }
+      
+      form .form_input {
+          display: block;
+          background-color: rgba(0,0,0,0.7);
+          color: #fff;
+          border: none;
+          font-size: 16px;
+          line-height: 50px;
+          padding: 0 10px;
+          float: left;
+          width: 100%;
+          transition: all 0.5s ease-in-out;
+      }
+      
+      form .submit {
+          background-color: #d0a772;
+          color: #fff;
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 50px;
+          display: inline-block;
+          padding: 0 10px;
+          float: left;
+          width: 100%;
+          border: none;
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+      }
+      form .submit:hover{
+          background: #010101;
+      }
+  }
+
+}
+
+.topFooter::before{
+  background: #010101;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+#bottomFooter{
+  padding-top: 20px;
+  position: relative;
+  display: block;
+  background-color: #010101;
+  border-top: 1px dashed rgba(207, 166, 113);
+  padding: 30px 0;
+  z-index: 1;
+
+  p, a{
+      font-size: 16px;
+      text-align: center;
+      color: white;
+  }
+
+  p a:hover{
+      color: #d0a772;
+  }
 }
