@@ -1,0 +1,13 @@
+/* IMPORTS */
+@import url(bootstrap.css);
+@import url(animation.css);
+@import url(responsive.css);
+
+/* Variables */
+:root {
+  --btn-clr: #4caf50;
+}
+
+body {
+  background-color: #f3f3f3;
+}

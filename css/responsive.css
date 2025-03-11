@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+  .gallery-single {
+    margin-bottom: 15px;
+  }
+
+  .button-group button {
+    width: 23.7%;
+    font-size: 0.8rem;
+  }
+  .why-text {
+    padding-top: 0;
+  }
+  #dinner-container,
+  #lunch-container,
+  #drinks-container {
+    display: flex;
+
+    p {
+      display: none;
+    }
+    h4,
+    h5 {
+      font-size: 0.8rem;
+    }
+    .add-to-cart {
+      font-size: 0.5rem;
+    }
+  }
+  .custom-img {
+    height: 150px;
+    object-fit: cover;
+  }
+  .modal-dialog {
+    h4,
+    h5 {
+      font-size: 1.2rem;
+    }
+  }
+
+  #cart-item-image {
+    height: 150px;
+  }
+}
