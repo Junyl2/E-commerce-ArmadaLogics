@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <!-- SEO & Social Media Sharing -->
+     <meta name="description" content="Savor the flavors of the Philippines, delivered to your doorstep! our online food store brings you the best of local cuisine with convenience and authenticity.">
+     <meta name="keywords" content="foods, online foods, online order, local foods, pinoy foods, buy foods online">
+     <meta name="author" content="RestoKainan">
+
     <!-- bootstrap cdn-->
     <link
       rel="stylesheet"
@@ -10,17 +16,25 @@
     />
     <!--  css files -->
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <title>RestoKainan</title>
   </head>
 
   <body>
+    <!-- 
+        ray start coding here! just modify this comment once done.
+    
+    -->
+
     <!-- Special Menu -->
     <div
       class="container d-flex flex-wrap gap-3 flex-column align-items-center justify-content-center text-center"
     >
       <div>
         <h2>Special Menu</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Take a look of our best seller local foods and drinks!</p>
       </div>
       <div class="button-group bg-white">
         <button class="active" data-filter="*" id="buttonAll">All</button>
@@ -480,7 +494,7 @@
     >
       <strong>Success!</strong> Item added to cart.
     </div>
-
+    <!-- proceed to checkout modal -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -524,7 +538,7 @@
       </div>
     </div>
 
-    <!-- Check out -->
+  
     <!-- Checkout Modal -->
     <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
@@ -600,7 +614,6 @@
         </div>
       </div>
     </div>
-    <!-- Thankyou Modal -->
     <!-- Thank You Modal -->
     <div class="modal fade" id="thankYouModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
@@ -625,6 +638,7 @@
               type="button"
               class="btn btn-primary"
               data-bs-dismiss="modal"
+              id="ok-button"
             >
               OK
             </button>
@@ -633,16 +647,173 @@
       </div>
     </div>
 
-    <!-- bootstrap js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+   
+    <!-- ---------------------------------------------------------Czy Part------------------------------------------------------------------------------ -->
+      <!-- Start Gallery -->
+      <section class="gallery container">
+        <div id="galleryTitle">
+          <h2>Gallery</h2>
+          <p>Enjoy a feast of authentic Filipino dishes like rich adobo, crispy lechon, flavorful kare-kare, and sizzling sisig. Made fresh and made with love! </p>
+        </div>
+        <div id="galleryImg">
+            <div class="galleryRow">
+                  <img class="img-fluid" src="/assets/images/gallery/galleryimage1.jpg" alt="Gallery Image">
+                  <img class="img-fluid" src="/assets/images/gallery/galleryimage2.jpg" alt="Gallery Image">
+                  <img class="img-fluid" src="/assets/images/gallery/galleryimage3.jpg" alt="Gallery Image">
+            </div>
+            <div class="galleryRow ">
+                <img class="img-fluid" src="/assets/images/gallery/galleryimage4.jpg" alt="Gallery Image">
+                <img class="img-fluid" src="/assets/images/gallery/galleryimage5.jpg" alt="Gallery Image">
+                <img class="img-fluid" src="/assets/images/gallery/galleryimage6.jpg" alt="Gallery Image">
+            </div>
+        </div>
+        <div class="fullscreen-view" id="fullscreenView">
+          <span class="close-btn">✖</span>
+          <img id="fullImage">
+        </div>
+    </section>
+    <!-- End Gallery -->
 
-    <!-- script files -->
-    <script src="js/specialmenu.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="script.js"></script>
+    <!-- Start Customer Review-->
+    <section class="customerReview">
+      <div class="container mt-sm-1">
+        <h2>Customer Review</h2>
+        <p>Hear from our happy customers about their delicious dining experiences, excellent service, and why they keep coming back for more! </p>
+        <section class="customerCarousel">
+          <div id="reviewCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-caption">
+                        <img src="assets/customer-review/pp1.jpg"Customer 1" class="review-img">
+                        <h5>Junyl Cabusas</h5>
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i> 
+                      </div>
+                      <p>"The food was absolutely delicious! The adobo was cooked perfectly, and the service was top-notch. Will definitely be coming back!"</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption">
+                        <img src="assets/customer-review/pp2.jpg" alt="Customer 2" class="review-img">
+                        <h5>Rey Urbi</h5>
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star-half-alt"></i>
+                      </div>
+                      <p>"Best Sweet Back Ribs I've ever had! The flavors were incredible, and the ambiance made it even more enjoyable. Highly recommended!"</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-caption">
+                        <img src="assets/images/customer-review/profile-3.webp" alt="Customer 3" class="review-img">
+                        <h5>Jane Smith </h5>
+                        <div class="stars">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="far fa-star"></i>
+                      </div>
+                      <p>"Great experience overall! The seafood platter was fresh and well-seasoned. The waiting time was a bit long, but totally worth it!"</p>
+                    </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </button>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- End Customer Review -->
+    
+    <!-- Start Contact Info-->
+    <section class="contactInfo overflow-hidden">
+      <div class="row">
+        <div class="col-md-4">
+          <i class="fa fa-volume-control-phone"></i>
+          <div class="overflow-hidden">
+            <h3>Phone</h3>
+            <p class="lead">+639 1345 675 432</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope"></i>
+          <div class="overflow-hidden">
+            <h3>Email</h3>
+            <p class="lead">restokainan@gmail.com</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-map-marker"></i>
+          <div class="overflow-hidden">
+            <h3>Location</h3>
+            <p class="lead">123, Malate, Manila</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Info -->
+
+    <!-- Start Footer -->
+    <footer>
+        <section class="topFooter row">
+            <section id="aboutUs" class="topFooterContainer col-lg-3 col-md-6">
+                <div class="container-fluid">
+                    <h3>ABOUT US</h3>
+                    <p>At RestoKainan, we bring delicious, restaurant-quality meals straight to your doorstep with speed, freshness, and flavor in every order. Whether you're craving a quick bite or a family feast, we make online food ordering easy, convenient, and satisfying!</p>
+                </div>
+            </section>
+            <section id="openingHours" class="topFooterContainer col-lg-3 col-md-6">
+                <h3>OPENING HOURS</h3>
+                <ul>
+                    <li>Monday : Closed</li>
+                    <li>Tue-Wed : 9 Am - 10PM</li>
+                    <li>Thu-Fri : 9 Am - 10PM</li>
+                    <li>Sat-Sun : 5 PM - 10PM</li>
+                </ul>
+            </section> 
+            <section id="contactInfo" class="topFooterContainer col-lg-3 col-md-6">
+                <h3>CONTACT INFORMATION</h3>
+                <p class="">Kamyas Street, Shangri La Tower, Malate, Manila, 1004</p>
+                <p class=""><a href="#">+01 2000 800 9999</a></p>
+                <p><a href="#"> restokainan@gmail.com</a></p>
+            </section>
+            <section id="subscribe" class="topFooterContainer col-lg-3 col-md-6">
+              <h3>SUBSCRIBE</h3>
+              <form>
+                <input name="email" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+                <button type="submit" class="submit">SUBSCRIBE</button>
+              </form>
+            </section>
+        </section>
+        <section id="bottomFooter">
+            <p>All Rights Reserved. &copy; 2025 <a href="#">RestoKainan</a></p>
+        </section>
+    </footer>
+    <!-- End Footer -->
+
+     <!-- bootstrap bundle js -->
+     <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" defer
+     crossorigin="anonymous"
+   ></script>
+
+   <!-- js script files -->
+   <script src="js/specialmenu.js" defer></script>
+   <script src="js/modal.js" defer></script>
+   <script src="script.js" defer></script>
+   <script src ="js/gallery.js"defer></script>
   </body>
 </html>
