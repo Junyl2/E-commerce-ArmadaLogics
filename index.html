@@ -27,54 +27,55 @@
   </head>
 
   <body>
-    <!-- 
-        header
-   --> 
-   <nav class="ar-navbar">
-    <div class="ar-container">
-        <a class="ar-brand" href="#">
-            <img src="icons/logooo.jpg" alt="Armada Resto Logo" class="ar-logo">
-        </a>
-        <ul class="ar-nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-   
-          <!-- View Cart Modal -->
-          <button
-          type="button"
-          class="btn custom-btn position-fixed top-0 end-0 m-3"
-          data-bs-toggle="modal"
-          data-bs-target="#cartModal"
-        >
-          View Cart <img class="viewcart-img" src="icons/shopping-cart.png" alt="">
+          <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 z-1000">
+    <div class="container-fluid">
+        <button class="navbar-toggler d-lg-none me-3 bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        
-        
-
+        <a class="ar-brand" href="#">
+          <img src="icons/mainlogo.jpg" alt="Armada Resto Logo" class="ar-logo">
+     	</a>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item"><a class="nav-link " href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- View Cart Modal -->
+          <button
+            type="button"
+            class="btn custom-btn position-fixed top-0 end-0 p-lg-3"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
+          >
+            View Cart <img class="viewcart-img" src="icons/shopping-cart.png" alt="">
+          </button>
       </div>
-  </nav>
-
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  	</nav>
+	<!-- Carousle cover photo -->
+  	<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <div class="carousel-item active">
-              <img src="assets/images/coverphoto/coverPhoto3.jpg" class="ar-carousel-image" alt="Restaurant Image">
+              <img src="assets/images/coverphoto/coverPhoto3.jpg" class="ar-carousel-image img-fluid" alt="Restaurant Image">
               <div class="ar-carousel-caption">
                   <h1>Welcome To <strong>RestoKainan</strong></h1>
                   <p>Debug your hunger, one bite at a time.</p>
               </div>
           </div>
           <div class="carousel-item">
-              <img src="assets/images/coverphoto/coverphoto6.jpg" class="ar-carousel-image" alt="Dining Image">
+              <img src="assets/images/coverphoto/coverphoto6.jpg" class="ar-carousel-image img-fluid" alt="Dining Image">
               <div class="ar-carousel-caption">
                   <h1>Delicious & Fresh</h1>
                   <p>Experience the best quality food with us.</p>
               </div>
           </div>
           <div class="carousel-item">
-              <img src="assets/images/coverphoto/coverPhoto7.jpg" class="ar-carousel-image" alt="Chef Cooking">
+              <img src="assets/images/coverphoto/coverPhoto7.jpg" class="ar-carousel-image im-fluid" alt="Chef Cooking">
               <div class="ar-carousel-caption">
                   <h1>Made by Top Chefs</h1>
                   <p>Expertly crafted dishes to satisfy your cravings.</p>
@@ -88,33 +89,33 @@
           <span class="carousel-control-next-icon"></span>
       </button>
   </div>
-
-  <section class="ar-about-section">
-      <div class="ar-about-container">
-          <div class="ar-about-image">
-              <img src="assets/images/welcomePhoto.jpg" alt="Chef Cooking">
-          </div>
-          <div class="ar-about-content">
-              <h2>Welcome To RestoKainan</h2>
-              <p>At RestoKainan, were not just delivering meals — were delivering moments of joy, comfort, and togetherness. Our restaurant-quality dishes arrive at your doorstep bursting with flavor, freshness, and love. Whether you're craving a quick bite or a grand family feast, we promise to make your dining experience effortless, satisfying, and unforgettable. Every order is crafted to bring a smile to your face — because you deserve more than just a meal, you deserve a memorable experience..</p>
-          </div>
-      </div>
-  </section>
-
-  <section class="mb-5"> 
-    <div class="qt-box qt-background">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto text-left">
-                    <p class="lead">
-                        "At Resto Kainan, we don’t just serve food — we share the rich stories and comforting flavors of Filipino culture with every dish."
-                    </p>
-                    <span class="lead">RestoKainan</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+	<!-- About us section -->
+	<section class="ar-about-section ">
+		<div class="ar-about-container">
+			<div class="ar-about-image">
+				<img src="assets/images/welcomePhoto.jpg" alt="Chef Cooking">
+			</div>
+			<div class="ar-about-content">
+				<h2>Welcome To RestoKainan</h2>
+				<p>At RestoKainan, were not just delivering meals — were delivering moments of joy, comfort, and togetherness. Our restaurant-quality dishes arrive at your doorstep bursting with flavor, freshness, and love. Whether you're craving a quick bite or a grand family feast, we promise to make your dining experience effortless, satisfying, and unforgettable. Every order is crafted to bring a smile to your face — because you deserve more than just a meal, you deserve a memorable experience..</p>
+			</div>
+		</div>
+	</section>
+	<!-- quote section -->
+	<section class="mb-5"> 
+		<div class="qt-box qt-background">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 ml-auto mr-auto text-left">
+						<p class="lead">
+							"At Resto Kainan, we don’t just serve food — we share the rich stories and comforting flavors of Filipino culture with every dish."
+						</p>
+						<span class="lead">RestoKainan</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <!-- Special Menu -->
     <div
@@ -891,5 +892,6 @@
    <script src="js/modal.js" defer></script>
    <script src="script.js" defer></script>
    <script src ="js/gallery.js"defer></script>
+   <script src="js/main.js"></script>
   </body>
 </html>

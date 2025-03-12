@@ -1,3 +1,20 @@
+@media (max-width: 1024px) {
+  .ar-brand,
+  .ar-logo img {
+    display: none !important;
+  }
+  .ar-about-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .ar-about-container img {
+    height: 500px;
+  }
+  .carousel {
+    margin-top: 72px;
+  }
+}
+
 @media (max-width: 768px) {
   .button-group button {
     width: 23%;
@@ -23,8 +40,8 @@
     object-fit: cover;
   }
 
-  #cart-item-image {
-    height: 150px;
+  .ar-about-container img {
+    height: 440px;
   }
 }
 
@@ -61,44 +78,8 @@
       display: none;
     }
   }
-}
-/* Responsive Design */
-@media (max-width: 992px) {
-  .ar-container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .ar-nav-links {
-      flex-direction: column;
-      width: 100%;
-      text-align: center;
-  }
-
-  .ar-nav-links li {
-      margin: 10px 0;
-  }
-
-  .ar-carousel-caption h1 {
-      font-size: 3rem;
-  }
-
-  .ar-carousel-caption p {
-      font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .ar-carousel-caption h1 {
-      font-size: 2rem;
-  }
-
-  .ar-carousel-caption p {
-      font-size: 0.9rem;
-  }
-
-  .ar-about-container {
-      flex-direction: column;
-      text-align: center;
+  .carousel,
+  .ar-about-section {
+    display: none;
   }
 }
