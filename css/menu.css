@@ -1,0 +1,22 @@
+.qt-background {
+  margin-top: 100px;
+
+  @media (max-width: 1024px) {
+    margin-top: 70px;
+  }
+}
+.qt-background {
+  background: url(../assets/images/menuLast.jpg) no-repeat;
+  background-size: cover;
+  padding: 100px 0;
+  background-attachment: fixed;
+  background-position: center center;
+  position: relative;
+}
+.nav-item .menu {
+  background-color: #d0a772 !important;
+  border-radius: 5px;
+}
+.menu-txt {
+  font-size: clamp(0.5rem, 3vw, 2rem) !important;
+}
