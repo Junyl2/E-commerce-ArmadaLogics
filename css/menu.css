@@ -17,3 +17,6 @@
   background-color: #d0a772 !important;
   border-radius: 5px;
 }
+.menu-txt {
+  font-size: clamp(0.5rem, 3vw, 2rem) !important;
+}

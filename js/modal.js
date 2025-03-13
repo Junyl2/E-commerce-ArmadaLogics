@@ -52,9 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update total price
   function updateTotalPrice() {
     let totalPrice = selectedProduct.quantity * selectedProduct.price;
+
     document.getElementById(
       "cart-total-price"
     ).textContent = `₱${totalPrice.toFixed(2)}`;
+
+    //store values in local storage
+    localStorage.setItem("cartTotalQuantity", selectedProduct.quantity);
+    localStorage.setItem("cartTotalPrice", totalPrice);
   }
 
   // Open confirmation modal
@@ -71,53 +76,24 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       confirmModal.show();
     });
-
-  // Confirm Add to Cart
-  document
-    .getElementById("confirmAddToCart")
-    .addEventListener("click", function () {
-      bootstrap.Modal.getInstance(
-        document.getElementById("confirmModal")
-      ).hide();
-      let successAlert = document.getElementById("successAlert");
-      successAlert.classList.remove("d-none");
-
-      // Hide success alert after 2 seconds
-      setTimeout(() => {
-        successAlert.classList.add("d-none");
-      }, 2000);
-    });
 });
 
 //View store cart
 document.addEventListener("DOMContentLoaded", function () {
   let cart = [];
 
-  // Select all "Add to Cart" buttons
-  document.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", function () {
-      let product = {
-        name: this.getAttribute("data-name"),
-        price: parseFloat(this.getAttribute("data-price")),
-        image: this.getAttribute("data-image"),
-        description: this.getAttribute("data-description"),
-        quantity: 1,
-      };
-
-      addToCart(product);
-    });
-  });
-
-  function addToCart(product) {
-    let existingProduct = cart.find((item) => item.name === product.name);
-    if (existingProduct) {
-      existingProduct.quantity++;
-    } else {
-      cart.push(product);
-    }
-    updateCart();
+  function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
-  //function to update cart and price
+
+  function loadCart() {
+    let storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      cart = JSON.parse(storedCart);
+      updateCart();
+    }
+  }
+
   function updateCart() {
     let cartItemsContainer = document.getElementById("cart-items");
     let totalPrice = 0;
@@ -128,81 +104,132 @@ document.addEventListener("DOMContentLoaded", function () {
       totalPrice += itemTotal;
 
       cartItemsContainer.innerHTML += `
-                <tr>
-                    <td><img src="${item.image}" class="cart-img"></td>
-                    <td>${item.name}</td>
-                    <td>&#x20B1;${item.price.toFixed(2)}</td>
-                    <td>
-                        <button class="btn btn-sm btn-outline-secondary decrease" data-index="${index}">-</button>
-                        <span class="mx-2">${item.quantity}</span>
-                        <button class="btn btn-sm btn-outline-secondary increase" data-index="${index}">+</button>
-                    </td>
-                    <td>&#x20B1;${itemTotal.toFixed(2)}</td>
-                    <td><button class="btn btn-danger btn-sm remove" data-index="${index}">Remove</button></td>
-                </tr>
-            `;
+          <tr>
+              <td><img src="${item.image}" class="cart-img"></td>
+              <td>${item.name}</td>
+              <td>&#x20B1;${item.price.toFixed(2)}</td>
+              <td>
+                  <button class="btn btn-sm btn-outline-secondary decrease" data-index="${index}">-</button>
+                  <span class="mx-2">${item.quantity}</span>
+                  <button class="btn btn-sm btn-outline-secondary increase" data-index="${index}">+</button>
+              </td>
+              <td>&#x20B1;${itemTotal.toFixed(2)}</td>
+              <td><button class="btn btn-danger btn-sm remove" data-index="${index}">Remove</button></td>
+          </tr>
+      `;
     });
 
     document.getElementById("cart-total").textContent = `₱${totalPrice.toFixed(
       2
     )}`;
+    saveCart();
   }
 
-  document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("increase")) {
-      let index = event.target.getAttribute("data-index");
-      cart[index].quantity++;
-      updateCart();
-    }
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", function () {
+      let productName = this.getAttribute("data-name");
+      let existingProduct = cart.find((item) => item.name === productName);
 
-    if (event.target.classList.contains("decrease")) {
-      let index = event.target.getAttribute("data-index");
+      // If product exists, show modal and update quantity..
+      if (existingProduct) {
+        selectedProduct = existingProduct;
+      } else {
+        selectedProduct = {
+          name: productName,
+          price: parseFloat(this.getAttribute("data-price")),
+          image: this.getAttribute("data-image"),
+          description: this.getAttribute("data-description"),
+          quantity: 1,
+        };
+      }
+
+      // Populate modal with selected product details
+      document.getElementById("cart-item-name").textContent =
+        selectedProduct.name;
+      document.getElementById(
+        "cart-item-price"
+      ).textContent = `₱${selectedProduct.price.toFixed(2)}`;
+      document.getElementById("cart-item-image").src = selectedProduct.image;
+      document.getElementById("cart-item-description").textContent =
+        selectedProduct.description;
+      document.getElementById("cart-quantity").value = selectedProduct.quantity;
+
+      updateTotalPrice();
+
+      let cartModal = new bootstrap.Modal(
+        document.getElementById("addToCartModal")
+      );
+      cartModal.show();
+    });
+  });
+
+  //  Update confirm Add to Cart button to store the correct quantity
+  document
+    .getElementById("confirmAddToCart")
+    .addEventListener("click", function () {
+      let updatedQuantity = parseInt(
+        document.getElementById("cart-quantity").value
+      );
+
+      let existingProduct = cart.find(
+        (item) => item.name === selectedProduct.name
+      );
+      if (existingProduct) {
+        existingProduct.quantity = updatedQuantity; //store selected qty.
+      } else {
+        selectedProduct.quantity = updatedQuantity;
+        cart.push(selectedProduct);
+      }
+
+      updateCart();
+      bootstrap.Modal.getInstance(
+        document.getElementById("confirmModal")
+      ).hide();
+    });
+
+  document.addEventListener("click", function (event) {
+    let index = event.target.getAttribute("data-index");
+    if (!index) return;
+
+    if (event.target.classList.contains("increase")) {
+      cart[index].quantity++;
+    } else if (event.target.classList.contains("decrease")) {
       if (cart[index].quantity > 1) {
         cart[index].quantity--;
       } else {
         cart.splice(index, 1);
       }
-      updateCart();
+    } else if (event.target.classList.contains("remove")) {
+      cart.splice(index, 1);
     }
 
-    if (event.target.classList.contains("remove")) {
-      let index = event.target.getAttribute("data-index");
-      cart.splice(index, 1);
-      updateCart();
-    }
+    updateCart();
   });
 
   document.getElementById("checkout").addEventListener("click", function () {
-    let cartItems = document.getElementById("cart-items");
-    let cartTotal = document.getElementById("cart-total").textContent.trim();
-
-    if (cartItems.children.length === 0 || cartTotal === "₱0.00") {
-      // Show an alert if the cart is empty
+    if (cart.length === 0) {
       alert("Your cart is empty! Please add items before checking out.");
-      return; // Stop the function execution
+      return;
     }
 
-    // Proceed with checkout if cart is not empty
-    document.getElementById("checkout-total").textContent = cartTotal;
+    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (!loggedInUser) {
+      alert("Please log in to proceed with checking out");
+      return;
+    }
+
+    document.getElementById("checkout-total").textContent =
+      document.getElementById("cart-total").textContent;
     let checkoutModal = new bootstrap.Modal(
       document.getElementById("checkoutModal")
     );
-    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-    if (loggedInUser) {
-      checkoutModal.show();
-    } else {
-      alert("Please log in to proceed with checking out");
-    }
+    checkoutModal.show();
   });
 
   document
     .getElementById("confirmPayment")
-
     .addEventListener("click", function () {
-      let totalPriceText = document
-        .getElementById("checkout-total")
-        .textContent.trim();
-      let totalPrice = parseFloat(totalPriceText.replace("₱", ""));
+      let totalPrice = document.getElementById("cart-total").textContent;
       let selectedPayment = document.querySelector(
         'input[name="payment-method"]:checked'
       );
@@ -210,18 +237,19 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Please select a payment method.");
         return;
       }
-      alert(
-        ` Payment confirmed via ${
-          selectedPayment.value
-        }. Total: ₱${totalPrice.toFixed(2)}`
-      );
+
+      alert(`Payment confirmed via ${selectedPayment.value} ${totalPrice}`);
       cart = [];
+      saveCart(); // Save empty cart
       updateCart();
       bootstrap.Modal.getInstance(
         document.getElementById("checkoutModal")
       ).hide();
     });
+
+  loadCart(); // Load the cart when the page loads
 });
+
 /* Thankyou Modal */
 document
   .getElementById("confirmPayment")
@@ -250,18 +278,3 @@ document
       }, 500); // 500ms delay for smooth transition
     }
   });
-
-// JavaScript to dynamically change active class on click
-document.addEventListener("DOMContentLoaded", function () {
-  let navLinks = document.querySelectorAll(".nav-link");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      // Remove 'active' class from all links
-      navLinks.forEach((nav) => nav.classList.remove("active"));
-
-      // Add 'active' class to the clicked link
-      this.classList.add("active");
-    });
-  });
-});

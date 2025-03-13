@@ -1,4 +1,4 @@
-/* log in/ sign up/ log out */
+//show password signup/ log in
 function togglePassword(inputId, iconId) {
   let passwordField = document.getElementById(inputId);
   let icon = document.getElementById(iconId);

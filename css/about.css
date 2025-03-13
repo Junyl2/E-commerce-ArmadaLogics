@@ -20,3 +20,10 @@
 .ar-about-section {
   margin-top: -47px;
 }
+.about-txt {
+  font-size: clamp(0.5rem, 3vw, 2rem) !important;
+}
+.brand {
+  font-size: clamp(0.5rem, 3vw, 2rem) !important;
+  color: #d0a772 !important;
+}

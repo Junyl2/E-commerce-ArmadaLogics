@@ -19,15 +19,16 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     />
+    <!-- bootstrap icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <!--  css files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/about.css">
-   
+   <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <title>RestoKainan</title>
   </head>
-
   <body>
           <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 z-1000">
@@ -49,24 +50,121 @@
         </div>
     </div>
     <!-- View Cart Modal -->
-          <button
+            <button
             type="button"
-            class="btn custom-btn position-fixed top-0 end-0 p-lg-3"
+            class="btn view-cart custom-btn-cart position-fixed top-0 end-0 p-lg-3"
             data-bs-toggle="modal"
             data-bs-target="#cartModal"
           >
             View Cart <img class="viewcart-img" src="icons/shopping-cart.png" alt="">
           </button>
+          <!-- Login & Sign Up Buttons -->
+          <button type="button" class="btn log-in custom-btn position-fixed top-0 p-lg-3"
+          data-bs-toggle="modal" data-bs-target="#loginModal">
+          Log in <span class="text-dark">/</span>
+          </button>
+          <button type="button" class="btn log-out custom-btn position-fixed top-0 p-lg-3"
+          data-bs-toggle="modal" id="logoutBtn">
+          Log out
+          </button>
+          <button type="button" class="btn sign-up custom-btn position-fixed top-0 p-lg-3"
+          data-bs-toggle="modal" data-bs-target="#signupModal">
+          Sign up
+          </button>
       </div>
   	</nav>
+      
+<!-- Login Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="loginEmail" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="loginEmail" required>
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label for="loginPassword" class="form-label">Password</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="loginPassword" required>
+                      <span class="input-group-text" onclick="togglePassword('loginPassword', 'togglePasswordIcon1')">
+                        <i class="bi bi-eye" id="togglePasswordIcon1"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">Log in</button>
+                  <button type="button" class="btn btn-success sign-up w-100 "
+                  data-bs-toggle="modal" data-bs-target="#signupModal">
+                  Sign up
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="signupModalLabel">Sign up</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                    <label for="signupName" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="signupUsername" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="signupName" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="signupName" required>
+                  </div>
+                 
+                  <div class="mb-3">
+                      <label for="signupEmail" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="signupEmail" required>
+                  </div>
+                  <div class="mb-3 position-relative">
+                    <label for="signupPassword" class="form-label">Password</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="signupPassword" required>
+                      <span class="input-group-text" onclick="togglePassword('signupPassword', 'togglePasswordIcon1')">
+                        <i class="bi bi-eye" id="togglePasswordIcon1"></i>
+                      </span>
+                    </div>
+                  </div>
+                  
+                  <div class="mb-3 position-relative">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <div class="input-group">
+                      <input type="password" class="form-control" id="confirmPassword" required>
+                      <span class="input-group-text" onclick="togglePassword('confirmPassword', 'togglePasswordIcon2')">
+                        <i class="bi bi-eye" id="togglePasswordIcon2"></i>
+                      </span>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-success w-100">Sign up</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+	
     <!-- quote section -->
 	<section class="mb-5"> 
 		<div class="qt-box qt-background">
 			<div class="container">
 				<div class="d-lg-flex align-items-center justify-content-center ">
 					<div class="col-md-8 ml-auto mr-auto text-left">
-						<p class="lead">
-							Welcome to RestoKainan, where we bring the heart of Filipino home cooking to your plate! From savory Adobo to crispy Lechon Kawali, our dishes are made with love, tradition, and the finest local ingredients. Experience the warmth of Filipino hospitality with every bite!"
+						<p class="text-center about-txt">
+							Welcome to <span class="brand">RestoKainan</span>, where we bring the heart of Filipino home cooking to your plate! From savory Adobo to crispy Lechon Kawali, our dishes are made with love, tradition, and the finest local ingredients. Experience the warmth of Filipino hospitality with every bite!"
 						</p>
 					</div>
 				</div>
@@ -95,6 +193,267 @@
 			</div>
 		</div>
 	</section>
+  <!-- Add to cart Modal for Special Menu-->
+  <div
+  class="modal fade"
+  id="addToCartModal"
+  tabindex="-1"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add to Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body text-center">
+        <img
+          id="cart-item-image"
+          class="img-fluid rounded"
+          style="max-width: 150px"
+        />
+        <h4 id="cart-item-name"></h4>
+        <p class="text-muted">
+          <span id="cart-item-price"></span>
+        </p>
+        <p id="cart-item-description"></p>
+
+        <!-- Quantity Controls -->
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary" id="decrease">-</button>
+          <input
+            type="text"
+            class="form-control text-center"
+            id="cart-quantity"
+            value="1"
+            readonly
+          />
+          <button class="btn btn-outline-secondary" id="increase">+</button>
+        </div>
+        <h5>Total: <span id="cart-total-price"></span></h5>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-success" id="openConfirmModal">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation/cancel Modal -->
+<div
+  class="modal fade"
+  id="confirmModal"
+  tabindex="-1"
+  aria-labelledby="confirmModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Action</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>
+          Are you sure you want to add
+          <strong><span id="confirm-item-name"></span></strong> to your
+          cart?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-success" id="confirmAddToCart">
+          Yes, Add
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Alert (Default hidden) -->
+<div
+  id="successAlert"
+  class="alert alert-success text-center position-fixed bottom-0 start-50 translate-middle-x w-50 d-none"
+>
+  <strong>Success!</strong> Item added to cart.
+</div>
+<!-- proceed to checkout modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Shopping Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items"></tbody>
+        </table>
+        <h5 class="text-end">Total: <span id="cart-total">₱0.00</span></h5>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button type="button" class="btn btn-success" id="checkout">
+          Proceed to Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Checkout Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Checkout</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5>Total Amount: <span id="checkout-total">₱0.00</span></h5>
+        <hr />
+        <h6>Select Payment Method:</h6>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="payment-method"
+            value="GCash"
+            id="gcash"
+            class="form-check-input"
+          />
+          <label for="gcash" class="form-check-label"><img class="payment-img" src="/assets/images/gcash.jpg" alt=""><!-- GCash --></label>
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="payment-method"
+            value="maya"
+            id="maya"
+            class="form-check-input"
+          />
+          <label for="maya" class="form-check-label"
+            ><img class="payment-img" src="/assets/images/maya.jpg" alt=""><!-- maya --></label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="payment-method"
+            value="metrobank"
+            id="bdo"
+            class="form-check-input"
+          />
+          <label for="metrobank" class="form-check-label"></label><img class="payment-img" src="/assets/images/metrobank.jpg" alt="" /><!-- metrobank--></label
+          >
+        </div>
+        <div class="form-check">
+          <input
+            type="radio"
+            name="payment-method"
+            value="paypal"
+            id="paypal"
+            class="form-check-input"
+          />
+          <label for="paypal" class="form-check-label "> <img class="payment-img" src="/assets/images/paypal.jpg" alt=""><!-- paypal --></label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-success" id="confirmPayment">
+          Confirm Payment
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Thank You Modal -->
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h5 class="modal-title"> 💖 Thank You! 💖 </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <p>Your order has been placed successfully!</p>
+        <p>
+          We appreciate your purchase. You will receive an order
+          confirmation soon.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          id="ok-button"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 	
     <!-- ---------------------------------------------------------Czy Part------------------------------------------------------------------------------ -->
       <!-- Start Gallery -->
@@ -240,8 +599,8 @@
             <section id="subscribe" class="topFooterContainer col-lg-3 col-md-6">
               <h3>SUBSCRIBE</h3>
               <form>
-                <input name="email" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
-                <button type="submit" class="submit">SUBSCRIBE</button>
+                <input name="email" id="sub-email" class="form_input" placeholder="Email Address..." type="email">
+                <button id="send-sub" type="submit" class="submit" >SUBSCRIBE</button>
               </form>
             </section>
         </section>
@@ -250,6 +609,8 @@
         </section>
     </footer>
     <!-- End Footer -->
+    <a href="#" id="back-to-top" title="Back to top" 
+    >&uarr;</a>
 
      <!-- bootstrap bundle js -->
      <script
@@ -261,8 +622,8 @@
    <!-- js script files -->
    <script src="js/specialmenu.js" defer></script>
    <script src="js/modal.js" defer></script>
-   <script src="script.js" defer></script>
    <script src ="js/gallery.js"defer></script>
    <script src="js/main.js"></script>
+   <script src="js/account.js" defer></script>
   </body>
 </html>
