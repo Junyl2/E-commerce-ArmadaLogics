@@ -13,6 +13,9 @@
   .carousel {
     margin-top: 72px;
   }
+  .add-to-cart {
+    padding: 5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -46,15 +49,22 @@
   .nav-link {
     margin-top: 20px;
   }
+  .add-to-cart {
+    padding: 12px;
+  }
 }
 
-@media (max-width: 468px) {
+@media (max-width: 480px) {
   .button-group button {
     width: 23%;
     font-size: 0.8rem;
   }
   .why-text {
     padding-top: 0;
+  }
+  .why-text h4,
+  h5 {
+    font-size: 0.7rem !important;
   }
   #dinner-container,
   #lunch-container,
@@ -67,6 +77,9 @@
     .add-to-cart {
       font-size: 0.5rem;
     }
+  }
+  .lead {
+    font-size: 1.1rem !important;
   }
   .custom-img {
     height: 150px;
@@ -84,5 +97,30 @@
   .carousel,
   .ar-about-section {
     display: none;
+  }
+  .view-cart {
+    font-size: 0.7rem !important;
+    width: fit-content;
+  }
+  .log-out {
+    right: 110px !important;
+  }
+  .log-in {
+    right: 170px !important;
+  }
+  .sign-up {
+    right: 226px !important;
+  }
+  .add-to-cart {
+    padding: 13px !important;
+  }
+  .stars i {
+    font-size: 0.7rem !important;
+  }
+  .nav-link {
+    font-size: 0.9rem !important;
+  }
+  .gallery {
+    padding-top: 0px !important;
   }
 }
