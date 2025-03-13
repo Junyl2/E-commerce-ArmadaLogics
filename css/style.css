@@ -6,10 +6,54 @@
 /* Variables */
 :root {
   --btn-clr: #4caf50;
+  --glbl--clr: #d0a772;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+.contact-btn {
+  background-color: var(--btn-clr);
+}
+.nav-item .contact {
+  background-color: #d0a772 !important;
+  border-radius: 5px;
+}
+.log-in {
+  right: 225px;
+  background-color: none !important;
+  background: none !important;
+  color: black;
+  border: none !important;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  &:hover {
+    background-color: none !important;
+    color: var(--glbl--clr);
+  }
+}
+.log-out {
+  right: 150px;
+  background-color: none !important;
+  background: none !important;
+  color: black;
+  border: none !important;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  &:hover {
+    background-color: none !important;
+    color: var(--glbl--clr);
+  }
+}
+.sign-up {
+  right: 305px;
+  background-color: none !important;
+  background: none !important;
+  color: black;
+  border: none !important;
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
+  &:hover {
+    background-color: none !important;
+    color: var(--glbl--clr);
+  }
 }

@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     updateCart();
   }
-
+  //function to update cart and price
   function updateCart() {
     let cartItemsContainer = document.getElementById("cart-items");
     let totalPrice = 0;
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cartItems.children.length === 0 || cartTotal === "₱0.00") {
       // Show an alert if the cart is empty
-      alert("🛑 Your cart is empty! Please add items before checking out.");
+      alert("Your cart is empty! Please add items before checking out.");
       return; // Stop the function execution
     }
 
@@ -187,13 +187,22 @@ document.addEventListener("DOMContentLoaded", function () {
     let checkoutModal = new bootstrap.Modal(
       document.getElementById("checkoutModal")
     );
-    checkoutModal.show();
+    let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+    if (loggedInUser) {
+      checkoutModal.show();
+    } else {
+      alert("Please log in to proceed with checking out");
+    }
   });
 
   document
     .getElementById("confirmPayment")
 
     .addEventListener("click", function () {
+      let totalPriceText = document
+        .getElementById("checkout-total")
+        .textContent.trim();
+      let totalPrice = parseFloat(totalPriceText.replace("₱", ""));
       let selectedPayment = document.querySelector(
         'input[name="payment-method"]:checked'
       );
@@ -201,7 +210,11 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Please select a payment method.");
         return;
       }
-      alert(`Payment confirmed via ${selectedPayment.value}`);
+      alert(
+        ` Payment confirmed via ${
+          selectedPayment.value
+        }. Total: ₱${totalPrice.toFixed(2)}`
+      );
       cart = [];
       updateCart();
       bootstrap.Modal.getInstance(
@@ -237,6 +250,7 @@ document
       }, 500); // 500ms delay for smooth transition
     }
   });
+
 // JavaScript to dynamically change active class on click
 document.addEventListener("DOMContentLoaded", function () {
   let navLinks = document.querySelectorAll(".nav-link");

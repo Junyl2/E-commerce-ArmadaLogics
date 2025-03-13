@@ -43,6 +43,9 @@
   .ar-about-container img {
     height: 440px;
   }
+  .nav-link {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 468px) {

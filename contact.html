@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+     <!-- SEO & Social Media Sharing -->
+     <meta name="description" content="Savor the flavors of the Philippines, delivered to your doorstep! our online food store brings you the best of local cuisine with convenience and authenticity.">
+     <meta name="keywords" content="foods, online foods, online order, local foods, pinoy foods, buy foods online">
+     <meta name="author" content="RestoKainan">
+
+     <!-- browser tab logo -->
+     <link rel="icon" href="icons/weblogo.jpg" type="image/x-icon">
+     <link rel="shortcut icon" href="icons/favicon-16x16.png" type="image/x-icon">
+     <link rel="shortcut icon" href="icons/favicon-16x16.png"sizes="32x32"type="image/x-icon"> 
+
+    <!-- bootstrap cdn-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <!--  css files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <title>RestoKainan</title>
+  </head>
+
+  <body>
+          <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 z-1000">
+    <div class="container-fluid">
+        <button class="navbar-toggler d-lg-none me-3 bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="ar-brand" href="#">
+          <img src="icons/mainlogo.jpg" alt="Armada Resto Logo" class="ar-logo">
+     	</a>
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-3">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link contact" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- View Cart Modal -->
+          <button
+            type="button"
+            class="btn custom-btn position-fixed top-0 end-0 p-lg-3"
+            data-bs-toggle="modal"
+            data-bs-target="#cartModal"
+          >
+            View Cart <img class="viewcart-img" src="icons/shopping-cart.png" alt="">
+          </button>
+      </div>
+  	</nav>
+    <!-- Resto Location -->
+    <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4830.967339667324!2d120.95886851051384!3d14.613184103424274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cb377eba1d53%3A0xb359f8a81514bc34!2sKamias%20Street!5e1!3m2!1sen!2sph!4v1741841272305!5m2!1sen!2sph" width="100%" height="400"  allowfullscreen="" loading="lazy"></iframe>
+
+      <!-- Contact section -->
+      <h2 class="text-center mt-5">Contact Us</h2>
+      <form class="d-flex flex-column align-items-center justify-content-center">
+          <div class="mb-3 w-50">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="mb-3 w-50">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="mb-3 w-50">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Write your message here" required></textarea>
+          </div>
+          <button type="submit" class="btn contact-btn  w-50 mb-5">Send Message</button>
+      </form>
+  </div>
+    <!-- Start Contact Info-->
+    <section class="contactInfo overflow-hidden">
+      <div class="row">
+        <div class="col-md-4">
+          <i class="fa fa-volume-control-phone"></i>
+          <div class="overflow-hidden">
+            <h3>Phone</h3>
+            <p class="lead">+639 1345 675 432</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-envelope"></i>
+          <div class="overflow-hidden">
+            <h3>Email</h3>
+            <p class="lead">restokainan@gmail.com</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-map-marker"></i>
+          <div class="overflow-hidden">
+            <h3>Location</h3>
+            <p class="lead">123, Malate, Manila</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Info -->
+
+    <!-- Start Footer -->
+    <footer>
+        <section class="topFooter row">
+            <section id="aboutUs" class="topFooterContainer col-lg-3 col-md-6">
+                <div class="container-fluid">
+                    <h3>ABOUT US</h3>
+                    <p>At RestoKainan, we bring delicious, restaurant-quality meals straight to your doorstep with speed, freshness, and flavor in every order. Whether you're craving a quick bite or a family feast, we make online food ordering easy, convenient, and satisfying!</p>
+                </div>
+            </section>
+            <section id="openingHours" class="topFooterContainer col-lg-3 col-md-6">
+                <h3>OPENING HOURS</h3>
+                <ul>
+                    <li>Monday : Closed</li>
+                    <li>Tue-Wed : 9 Am - 10PM</li>
+                    <li>Thu-Fri : 9 Am - 10PM</li>
+                    <li>Sat-Sun : 5 PM - 10PM</li>
+                </ul>
+            </section> 
+            <section id="contactInfo" class="topFooterContainer col-lg-3 col-md-6">
+                <h3>CONTACT INFORMATION</h3>
+                <p class="">Kamyas Street, Shangri La Tower, Malate, Manila, 1004</p>
+                <p class=""><a href="#">+01 2000 800 9999</a></p>
+                <p><a href="#"> restokainan@gmail.com</a></p>
+            </section>
+            <section id="subscribe" class="topFooterContainer col-lg-3 col-md-6">
+              <h3>SUBSCRIBE</h3>
+              <form>
+                <input name="email" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+                <button type="submit" class="submit">SUBSCRIBE</button>
+              </form>
+            </section>
+        </section>
+        <section id="bottomFooter">
+            <p>All Rights Reserved. &copy; 2025 <a href="#">RestoKainan</a></p>
+        </section>
+    </footer>
+    <!-- End Footer -->
+
+     <!-- bootstrap bundle js -->
+     <script
+     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" defer
+     crossorigin="anonymous"
+   ></script>
+
+   <!-- js script files -->
+   <script src="js/specialmenu.js" defer></script>
+   <script src="js/modal.js" defer></script>
+   <script src="script.js" defer></script>
+   <script src ="js/gallery.js"defer></script>
+   <script src="js/main.js"></script>
+  </body>
+</html>
