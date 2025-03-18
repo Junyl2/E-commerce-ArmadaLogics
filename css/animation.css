@@ -39,9 +39,9 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.button-group button.active {
+/* .button-group button.active {
   background: var(--btn-clr);
   color: white;
   transform: scale(1.1);
-}
+} */
 /* end section of special menus */

@@ -12,15 +12,18 @@
      <link rel="icon" href="icons/weblogo.jpg" type="image/x-icon">
      <link rel="shortcut icon" href="icons/favicon-16x16.png" type="image/x-icon">
      <link rel="shortcut icon" href="icons/favicon-16x16.png"sizes="32x32"type="image/x-icon"> 
- 
-
+     <!-- fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- bootstrap cdn-->
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    />
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"/>
+
     <!-- bootstrap icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- font-awesome  -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <!--  css files -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/menu.css">
@@ -32,34 +35,38 @@
 
   <body>
           <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark position-fixed top-0 z-1000">
-    <div class="container-fluid">
-        <button class="navbar-toggler d-lg-none me-3 bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler d-lg-none ms-auto bg-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="ar-brand" href="#">
-          <img src="icons/mainlogo.jpg" alt="Armada Resto Logo" class="ar-logo">
-     	</a>
-        <!-- Navbar Links -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-3">
+        <!-- Navbar Links and collapse -->
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ms-auto me-5 ">
                 <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link menu" href="#">Menu</a></li>
+                <li class="nav-item"><a class="nav-link menu" id="menu-page" href="#product-categories">Menu</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
+        <button
+        type="button"
+        class="text-light bg-dark view-cart custom-btn-cart end-0 p-lg-3 position-relative"
+        data-bs-toggle="modal"
+        data-bs-target="#cartModal"
+      >
+      <img class="viewcart-img " src="icons/shopping-cart.png" alt=""> Cart <div id="cart-notif" class="text-light">0</div>
+      </button> 
+      <button class="orderNow position-fixed " id="orderNow" data-bs-toggle="modal" data-bs-target="#signupModal">Order Now</button>
+      <a class="ar-brand" href="#">
+        <img src="icons/mainlogo.jpg" alt="Armada Resto Logo" class="ar-logo">
+     </a>
     </div>
     <!-- View Cart Modal -->
-          <button
-            type="button"
-            class="btn view-cart custom-btn-cart position-fixed top-0 end-0 p-lg-3"
-            data-bs-toggle="modal"
-            data-bs-target="#cartModal"
-          >
-            View Cart <img class="viewcart-img" src="icons/shopping-cart.png" alt="">
-          </button>
-          <!-- Login & Sign Up Buttons -->
+     
+             <!-- Login & Sign Up Buttons -->
+       <!--    <div class="users"> 
+       
           <button type="button" class="btn log-in custom-btn position-fixed top-0 p-lg-3"
           data-bs-toggle="modal" data-bs-target="#loginModal">
           Log in <span class="text-dark">/</span>
@@ -72,37 +79,50 @@
           data-bs-toggle="modal" data-bs-target="#signupModal">
           Sign up
           </button>
+        </div> -->
       </div>
   	</nav>
-      
+    <!-- Order Now Button -->
+
 <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content login-modal">
           <div class="modal-header">
-              <h5 class="modal-title" id="loginModalLabel">Log in</h5>
+              <h5 class="modal-title" id="loginModalLabel">Log in with</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
               <form>
-                  <div class="mb-3">
-                      <label for="loginEmail" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="loginEmail" required>
+                <div class="d-flex justify-content-between align-items-center"> 
+                <i class="fab fa-facebook fa-3x"></i>
+                <img class="icon-google" src="icons/search.png" alt="">
+                <i class="fab fa-apple fa-3x"></i>
+              </div>
+              <div class="login-or">
+                <span>or</span>
+              </div>
+                  <div class="mb-3 position-relative">
+                      <!-- <label for="loginEmail" class="form-label">Email address</label> -->
+                      <input type="email" class="position-relative form-control login-email" id="loginEmail" placeholder="Email" required >
+                      <i class="fa-solid fa-user "></i>
                   </div>
                   <div class="mb-3 position-relative">
-                    <label for="loginPassword" class="form-label">Password</label>
+                   <!--  <label for="loginPassword" class="form-label">Password</label> -->
                     <div class="input-group">
-                      <input type="password" class="form-control" id="loginPassword" required>
-                      <span class="input-group-text" onclick="togglePassword('loginPassword', 'togglePasswordIcon1')">
-                        <i class="bi bi-eye" id="togglePasswordIcon1"></i>
+                      <input type="password" class="form-control login-password" id="loginPassword" placeholder="Password" required>
+                      <span class="input-group-text login-showpass" onclick="togglePassword('loginPassword', 'togglePasswordIcon1')">
+                        <i class="bi bi-eye " id="togglePasswordIcon1"></i>
                       </span>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-success w-100">Log in</button>
-                  <button type="button" class="btn btn-success sign-up w-100 "
+                  <button type="submit" class="btn-login w-100">Log in</button>
+                  <div class="d-flex rememberMe" > <input  type="checkbox" name="" id=""> Remember me? <a  class="forgotPassword" href="forgotpassword" >Forgot Password?</a> </div> 
+                  <!-- <button type="button" class="btn btn-success sign-up w-100 "
                   data-bs-toggle="modal" data-bs-target="#signupModal">
                   Sign up
-                  </button>
+                  </button> -->
+                  <p class="mt-2 text-center no-account"> Don't have an account?  <a href="" class="text-primary link-signup" data-bs-toggle="modal" data-bs-target="#signupModal"> sign up here </a></p> 
               </form>
           </div>
       </div>
@@ -111,33 +131,35 @@
 
 <!-- Sign Up Modal -->
 <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-      <div class="modal-content">
+  <div class="modal-dialog d-flex ">
+      <div class="modal-content signup-modal" >
+        <div class="signup-img"></div>
+        <div class="sign-up-content">
           <div class="modal-header">
               <h5 class="modal-title" id="signupModalLabel">Sign up</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="sign-up-container" >
               <form>
                   <div class="mb-3">
-                    <label for="signupName" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="signupUsername" required>
-                  </div>
-                  <div class="mb-3">
                       <label for="signupName" class="form-label">Full Name</label>
-                      <input type="text" class="form-control" id="signupName" required>
-                  </div>
+                      <input type="text" class="form-control" id="signupName"  placeholder="Name.." required>
+                  </div>  
                  
-                  <div class="mb-3">
+                  <div class="mb-3" id="emailContainer">
                       <label for="signupEmail" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="signupEmail" required>
+                      <input type="email" class="form-control" id="signupEmail" placeholder="Email.." required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="signupName" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="signupUsername" placeholder="Username.." required>
                   </div>
                   <div class="mb-3 position-relative">
                     <label for="signupPassword" class="form-label">Password</label>
                     <div class="input-group">
-                      <input type="password" class="form-control" id="signupPassword" required>
-                      <span class="input-group-text" onclick="togglePassword('signupPassword', 'togglePasswordIcon1')">
-                        <i class="bi bi-eye" id="togglePasswordIcon1"></i>
+                      <input type="password" class="form-control" id="signupPass" placeholder="*******" required>
+                      <span class="input-group-text" onclick="togglePassword('signupPass', 'togglePasswordIconThis')">
+                        <i class="bi bi-eye" id="togglePasswordIconThis"></i>
                       </span>
                     </div>
                   </div>
@@ -145,52 +167,68 @@
                   <div class="mb-3 position-relative">
                     <label for="confirmPassword" class="form-label">Confirm Password</label>
                     <div class="input-group">
-                      <input type="password" class="form-control" id="confirmPassword" required>
+                      <input type="password" class="form-control" id="confirmPassword" placeholder="*******"  required>
                       <span class="input-group-text" onclick="togglePassword('confirmPassword', 'togglePasswordIcon2')">
                         <i class="bi bi-eye" id="togglePasswordIcon2"></i>
                       </span>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-success w-100">Sign up</button>
-              </form>
+                  <button type="submit" class="btn-signup w-50">Sign up</button>
+                  <a href="" class="sign-in-a " id="sign-in" data-bs-toggle="modal" data-bs-target="#loginModal">Sign in </a>
           </div>
+        </div>
       </div>
   </div>
 </div>
-	
 	<!-- quote section -->
-	<section class="mb-5"> 
-		<div class="qt-box qt-background ">
+	<section class="mb-5" id ="heroCarousel" > 
+		<div class="qt-box qt-background">
 			<div class="container">
 				<div class="row d-lg-flex align-items-center justify-content-center">
 					<div class="col-md-8 ml-auto mr-auto text-center">
-						<p class="text-center menu-txt">
-							Experience the rich flavors of the Philippines with our handpicked selection of local delicacies. From savory stews to sweet delights, each dish is crafted with authentic ingredients and traditional cooking methods to bring you the best of Filipino cuisine.
-						</p>
+						<h1 class=" menu-txt">
+							Experience the rich flavors of the Philippines with our handpicked selection of local delicacies.
+            </h1>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-    <!-- Special Menu -->
+    <!-- Products Container -->
     <div
-      class="container d-flex flex-wrap gap-3 flex-column align-items-center justify-content-center text-center"
-    >
-      <div>
-        <h2>Special Menu</h2>
-        <p>Take a look of our best seller local foods and drinks!</p>
+      class="container d-flex gap-3 flex-column flex-lg-row justify-content-center text-center" >
+      <div class="product-nav flex-column flex-md-row" >
+        <!-- Collapsible Button for md and smaller screens -->
+        <button class="btn menu-btn d-lg-none" id="product-categories" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse" aria-expanded="false" aria-controls="menuCollapse">
+          Caterogories <span class="ms-2">&#9662;</span> 
+      </button>
+      <!-- Collapsible Menu -->
+      <div class="collapse d-lg-block" id="menuCollapse">
+          <div class="button-group bg-white p-3 d-flex flex-column">
+          <!-- Special Menu --> 
+              <div class="special">
+                <button  id="specialMenu"><img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt=""> Special Menu </button>
+              </div>
+              <button class="active" data-filter="*" id="buttonAll">
+                  <img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt="">All
+              </button>
+              <button id="popularDishes">
+                <img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt=""> Popular
+            </button>
+              <button id="buttonDrinks">
+                  <img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt=""> Drinks
+              </button>
+              <button id="buttonLunch"><img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt="">Lunch</button>
+              <button id="buttonDinner"><img class="btn-product-img" src="assets/images/drinks/mixedJuice.jpg" alt="">Dinner</button>
+          </div>
       </div>
-      <div class="button-group bg-white">
-        <button class="active" data-filter="*" id="buttonAll">All</button>
-        <button id="buttonDrinks">Drinks</button>
-        <button id="buttonLunch">Lunch</button>
-        <button id="buttonDinner">Dinner</button>
-      </div>
+    </div>
 
+    <div class="product-container" > 
       <!-- DRINKS CONTAINER -->
-      <div class="menu-container d-md-flex gap-3 " id="drinks-container">
+      <div class="menu-container flex-column d-md-flex gap-3 " id="drinks-container">
        <!--  <h4 class="d-md-none">Refreshments</h4> -->
+         <div class=" drinks-category d-flex flex-column flex-md-row gap-3">
         <!-- Lemon Juice -->
         <div class="gallery-single ">
           <img
@@ -320,6 +358,141 @@
             </button>
           </div>
           </div>
+        </div>
+      </div>
+        <!-- here -->
+         <div class="drinks-category d-flex flex-column flex-md-row gap-3"> 
+         <!-- Spiked Palmer -->
+        <div class="gallery-single ">
+          <img
+            src="assets/images/drinks/SpikedPalmer.jpg"
+            class="img-fluid custom-img"
+            alt="Spiked Palmer"
+          />
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i> 
+        </div>
+          <div class="why-text">
+            <div class="detail-container"> 
+            <h4>Spiked Palmer</h4>
+            <p>A perfect mix for every mood and craving!</p>
+            <h5>&#x20B1; 99</h5>
+            <button
+              type="button"
+              class="add-to-cart btn"
+              data-name="Spiked Palmer"
+              data-price="99"
+              data-image="/assets/images/drinks/SpikedPalmer.jpg"
+              data-description="A perfect mix for every mood and craving!"
+            >
+              <img src="/icons/shopping-cart.png" alt="" /> Add to cart
+            </button>
+          </div>
+          </div>
+        </div>
+
+        <!-- Orange Juice-->
+        <div class="gallery-single">
+          <img
+            src="assets/images/drinks/orangeJuice.jpg"
+            class="img-fluid custom-img"
+            alt="Orange Juice"
+          />
+          <div class="stars ">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+          <div class="why-text">
+            <div class="detail-container"> 
+            <h4>Orange Juice</h4>
+            <p>Rich and creamy indulgence juice.</p>
+            <h5>&#x20B1; 99</h5>
+            
+            <button
+              type="button"
+              class="add-to-cart btn"
+              data-name="Orange Juice"
+              data-price="99"
+              data-image="assets/images/drinks/strawberryJuice.jpg"
+              data-description="Rich and creamy indulgence juice."
+            >
+              <img src="icons/shopping-cart.png" alt="" /> Add to cart
+            </button>
+          </div>
+        </div>
+        </div>
+
+        <!-- Mixed Juice -->
+         <div class="gallery-single">
+          <img
+            src="assets/images/drinks/mixedJuice.jpg"
+            class="img-fluid custom-img"
+            alt="Mixed Juice"
+          />
+          <div class="stars ">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+          <div class="why-text">
+            <div class="detail-container"> 
+            <h4>Mixed Juice</h4>
+            <p>Rich and creamy indulgence juice.</p>
+            <h5>&#x20B1; 159</h5>
+            <button
+              type="button"
+              class="add-to-cart btn"
+              data-name="Mixed Juice"
+              data-price="159"
+              data-image="assets/images/drinks/mixedJuice.jpg"
+              data-description="Rich and creamy indulgence juice."
+            >
+              <img src="icons/shopping-cart.png" alt="" /> Add to cart
+            </button>
+          </div>
+        </div>
+        </div> 
+
+        <!-- calamansi juice-->
+        <div class="gallery-single">
+          <img
+            src="assets/images/drinks/calamansiJuice.jpg  "
+            class="img-fluid custom-img"
+            alt="Calamansi Juice"
+          />
+          <div class="stars ">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+          <div class="why-text">
+            <div class="detail-container"> 
+            <h4>Calamansi Juice</h4>
+            <p>Delightful refreshment juicy sweetness.</p>
+            <h5>&#x20B1; 99</h5>
+            <button
+              type="button"
+              class="add-to-cart btn"
+              data-name="Calamansi Juice"
+              data-price="99"
+              data-image="/assets/images/drinks/calamansiJuice.jpg"
+              data-description="Delightful refreshment juicy sweetness."
+            >
+              <img src="icons/shopping-cart.png" alt="" /> Add to cart
+            </button>
+          </div>
+          </div>
+        </div>
+        <!-- end here -->
         </div>
       </div>
       <!-- lunch Foods -->
@@ -600,6 +773,7 @@
 
       </div>
     </div>
+  </div>
     <!-- End Menu -->
  <!-- Add to cart Modal for Special Menu-->
     <div
@@ -984,7 +1158,7 @@
     <footer>
         <section class="topFooter row">
             <section id="aboutUs" class="topFooterContainer col-lg-3 col-md-6">
-                <div class="container-fluid">
+                <div class="container-fluid flex-column">
                     <h3>ABOUT US</h3>
                     <p>At RestoKainan, we bring delicious, restaurant-quality meals straight to your doorstep with speed, freshness, and flavor in every order. Whether you're craving a quick bite or a family feast, we make online food ordering easy, convenient, and satisfying!</p>
                 </div>
@@ -1033,5 +1207,6 @@
    <script src ="js/gallery.js"defer></script>
    <script src="js/main.js"></script>
    <script src="js/account.js" defer></script>
+   <script src="js/menu.js"></script>`
   </body>
 </html>

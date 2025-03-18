@@ -1,8 +1,8 @@
 /* Fonts */
-@import url("https://fonts.googleapis.com/css?family=Arbutus+Slab");
-@import url("https://fonts.googleapis.com/css?family=Athiti:400,500,600");
+@import url('https://fonts.googleapis.com/css?family=Arbutus+Slab');
+@import url('https://fonts.googleapis.com/css?family=Athiti:400,500,600');
 :root {
-  --glbl--clr: #d0a772;
+  --main-btn-clr: #a17336;
 }
 * {
   padding: 0;
@@ -43,7 +43,6 @@ a {
 }
 
 .container {
-  font-family: "Arbutus Slab", serif;
   h2 {
     font-weight: bold;
   }
@@ -54,23 +53,35 @@ a {
 .navbar {
   background-color: #f3f3f3 !important;
   z-index: 1000;
-  min-width: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+}
+.navbar-nav {
+  margin-right: 220px !important;
+  text-align: center;
+}
+
+.navbar-toggler {
+  margin-right: 150px;
 }
 
 /* Navbar */
 .ar-logo {
-  height: 70px;
+  height: 50px;
   display: inline-block;
   vertical-align: middle;
 }
-
-.nav-link:hover {
-  opacity: 0.7 !important;
-}
-
-.nav-item .home {
-  background-color: #d0a772 !important;
-  border-radius: 5px;
+.ar-brand {
+  left: 2px !important;
+  z-index: 1500;
+  position: fixed;
+  top: 10px;
 }
 
 .navbar {
@@ -80,17 +91,6 @@ a {
   width: 100%;
   top: 0;
   z-index: 1000;
-}
-
-.custom-btn-cart {
-  background-color: #d0a772;
-  border-color: #d0a772;
-  color: #fff;
-  font-size: clamp(0.8rem, 1.8vw, 1rem);
-
-  &:hover {
-    background-color: #8b5e3b !important;
-  }
 }
 
 .nav-link {
@@ -103,8 +103,7 @@ a {
 }
 
 .nav-link:hover {
-  background-color: #d0a772;
-  color: white;
+  color: var(--main-btn-clr);
   border-radius: 5px;
 }
 
@@ -244,7 +243,7 @@ a {
   font-weight: 300;
   line-height: 44px;
   color: #fff;
-  font-family: "Arbutus Slab", serif;
+  font-family: 'Arbutus Slab', serif;
   margin-bottom: 20px;
 }
 
@@ -264,71 +263,50 @@ a {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   position: absolute;
   top: 0;
+  left: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
   color: white !important;
   width: 100%;
   text-align: center;
   transform: translateY(40px);
+
   h5 {
-    font-size: clamp(0.8rem, 1.7vw, 1.3rem);
+    font-size: clamp(1rem, 1.7vw, 1.3rem);
   }
+
   h4 {
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.2rem, 2vw, 2rem);
   }
 
   p {
-    font-size: clamp(0.7rem, 1.5vw, 0.8rem) !important;
+    font-size: clamp(0.9rem, 1.7vw, 1rem) !important;
     color: white !important;
   }
-
-  .detail-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
-    .add-to-cart {
-      border-radius: 0 !important;
-      background-color: var(--btn-clr);
-      width: 100%;
-      color: white;
-      &:hover {
-        background-color: rgb(10, 94, 35);
-      }
-
-      img {
-        height: 15%;
-        width: 15%;
-        margin-bottom: 4px;
-        margin-right: 5px;
-      }
-    }
-  }
 }
+
 .gallery-single {
   position: relative;
   overflow: hidden;
+  border: 1px solid var(--main-btn-clr);
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
 }
 .gallery-single:hover .why-text {
   opacity: 1;
   transform: translateY(0);
 }
-.custom-img {
-  height: 300px;
-  width: 250px;
-  object-fit: cover;
-  position: relative;
+
+#buttonAll.active,
+#buttonLunch.active,
+#buttonDinner.active,
+#buttonDrinks.active,
+#specialMenu.active,
+#popularDishes.active {
+  color:var(--main-btn-clr);
 }
 
-.button-group {
-  border: 1px solid rgb(233, 232, 232);
-  button {
-    background: none;
-    width: 100px;
-    border: none;
-  }
-}
 /* end of Special menu section */
 
 /* inside View Cart img */
@@ -345,11 +323,6 @@ a {
   object-fit: cover;
   margin-top: -5px;
   border-radius: 5px;
-}
-.viewcart-img {
-  height: auto;
-  width: 25px;
-  margin-top: -5px;
 }
 
 /* modal content - procceed to checkout */
@@ -418,7 +391,7 @@ a {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 1500;
 }
 
 .fullscreen-view img {
@@ -542,7 +515,7 @@ a {
 .topFooter {
   display: flex;
   justify-content: space-between;
-  background-image: url("/assets/images/gallery/footerimg.jpg");
+  background-image: url('/assets/images/gallery/footerimg.jpg');
   background-color: rgba(0, 0, 0, 0);
   background-position: center center;
   background-repeat: no-repeat;
@@ -622,14 +595,14 @@ a {
       transition: all 0.5s ease-in-out;
     }
     form .submit:hover {
-      background: #010101;
+      background: #dfb886;
     }
   }
 }
 
 .topFooter::before {
   background: #010101;
-  content: "";
+  content: '';
   height: 100%;
   left: 0;
   position: absolute;

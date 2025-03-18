@@ -1,6 +1,11 @@
+:root {
+  --main-btn-clr: #a17336;
+  --hover--clr: #b37f3b;
+}
 .qt-background {
-  margin-top: 100px;
-
+  margin-top: 80px;
+  /*  height: 100px; */
+  /* justify-content: start; */
   @media (max-width: 1024px) {
     margin-top: 70px;
   }
@@ -14,9 +19,11 @@
   position: relative;
 }
 .nav-item .menu {
-  background-color: #d0a772 !important;
-  border-radius: 5px;
+  color: var(--main-btn-clr);
 }
 .menu-txt {
   font-size: clamp(0.5rem, 3vw, 2rem) !important;
+  height: 100px;
+  margin-top: -6 0px;
+  color: white !important;
 }

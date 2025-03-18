@@ -1,0 +1,171 @@
+:root {
+  --btn-clr: #4caf50;
+  --hover--clr: #b37f3b;
+  --main-btn-clr: #a17336;
+  --secondary-fnt: 'Lato';
+}
+.signup-img {
+  background-image: url('/assets/images/drinks/mixedJuice.jpg');
+  object-fit: cover;
+  background-size: 400px;
+  background-repeat: no-repeat;
+  width: 400px !important;
+  height: 100%;
+  border-radius: 10px 0px 0px 10px;
+  background-color: #4caf50;
+}
+.modal-content input:focus {
+  box-shadow: none !important;
+}
+
+.signup-modal {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px !important;
+  font-weight: 500;
+  color: rgb(122, 121, 121);
+  background-color: #fffafa;
+}
+.modal-content input {
+  width: 280px;
+  border: none !important;
+  border-radius: 0 !important;
+  border-bottom: 1px solid rgb(202, 201, 201) !important;
+}
+.modal-body {
+  margin: 0px 15px !important;
+}
+.modal-content input::placeholder {
+  font-family: sans-serif;
+  color: rgb(202, 201, 201) !important;
+  font-size: 16px !important;
+}
+.modal-dialog {
+  max-width: fit-content;
+}
+.btn-signup {
+  width: 150px !important;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-btn-clr);
+  font-weight: 600;
+  font-size: 1rem !important;
+  margin-right: 40px;
+  color: white !important;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05) !important;
+  }
+}
+.input-group-text {
+  border-radius: 0;
+  border: none !important;
+  background-color: white;
+  border-bottom: 1px solid rgb(202, 201, 201) !important;
+  cursor: pointer;
+}
+.sign-in-a {
+  font-weight: 500;
+  transform: 0.2s ease;
+  &:hover {
+    font-size: medium;
+  }
+}
+
+/* log in modal section */
+.login-modal {
+  color: rgb(110, 110, 110);
+  .modal-header {
+    border-bottom: none !important;
+  }
+  .btn-login {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-btn-clr);
+    font-weight: 600;
+    font-size: 1rem !important;
+    margin-right: 30px;
+    color: white !important;
+    transition: transform 0.2s ease;
+    margin-bottom: 10px;
+    &:hover {
+      transform: scale(1.05) !important;
+    }
+  }
+}
+.login-password,
+.login-email {
+  background-color: rgb(240, 239, 239) !important;
+  padding: 10px;
+}
+.login-showpass {
+  background-color: rgb(240, 239, 239) !important;
+  border-bottom: none !important;
+}
+.login-or {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 30px 0px 10px 0px;
+}
+.login-modal input {
+  border-bottom: none !important;
+  border-radius: 5px !important;
+}
+.login-modal input::placeholder {
+  color: rgb(150, 147, 147) !important;
+  font-size: 14px !important;
+}
+.login-or::before,
+.login-or::after {
+  content: '';
+  flex-grow: 1;
+  border-top: 0.5px solid rgb(110, 110, 110);
+  margin: 0 10px;
+}
+
+.link-signup {
+  border-bottom: 1px solid rgb(81, 171, 223);
+  font-size: 13px;
+  padding-bottom: 2px;
+  margin-left: 3px;
+  color: rgb(81, 171, 223) !important ;
+}
+.no-account {
+  color: rgb(110, 110, 110) !important ;
+  font-size: 13px;
+}
+.fab {
+  cursor: pointer;
+}
+.fa-facebook {
+  color: #1877f2;
+}
+.fa-apple {
+  color: #000000;
+}
+.icon-google {
+  height: 45px;
+  cursor: pointer;
+}
+.fa-user {
+  position: absolute;
+  right: 12px;
+  top: 13px;
+}
+.rememberMe {
+  display: flex !important;
+  justify-content: start !important;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+.rememberMe input {
+  width: 12px;
+  margin-right: 5px;
+}
+.forgotPassword {
+  margin-left: 76px;
+  color: rgb(81, 171, 223);
+}

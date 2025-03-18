@@ -14,8 +14,9 @@
   position: relative;
 }
 .nav-item .about {
-  background-color: #d0a772 !important;
+  background-color: #a17336 !important;
   border-radius: 5px;
+  color: white !important;
 }
 .ar-about-section {
   margin-top: -47px;
